@@ -8,7 +8,7 @@
     name_db: "AWX"
   tasks:
     - name: Ejecutar archivo SQL
-      win_command: "Invoke-Sqlcmd -ServerInstance {{ name_server }} -Username {{ user }} -Password {{ password }} -Database {{ name_db }} -InputFile "\\10.0.10.51\\C$\\Users\\jegoavil\\Desktop\\Script2.sql""
+      win_command: "Invoke-Sqlcmd -ServerInstance {{ name_server }} -Username {{ user }} -Password {{ password }} -Database {{ name_db }} -InputFile '\\10.0.10.51\\C$\\Users\\jegoavil\\Desktop\\Script2.sql'"
       register: sql_result
 
     - name: Mostrar resultado SQL
