@@ -1,0 +1,7 @@
+---
+- name: Ejecutar script SQL en Windows
+  hosts: windows  # El grupo de inventario que contiene el servidor Windows
+  tasks:
+    - name: Ejecutar script SQL
+      win_shell: |
+        Invoke-Sqlcmd -ServerInstance nombre_del_servidor -Username usuario -Password contraseña -Database nombre_de_la_base_de_datos -Query "SELECT * FROM Heroes WHERE tipo_heroe = 'fuerza'"
