@@ -3,7 +3,7 @@
   hosts: all
   vars:
     name_server: "10.0.10.51"
-    user: "jegoavil@pe280.bally.local"
+    user: "pe280\jegoavil"
     password: "Acity2023"
     name_db: "AWX"
   tasks:
