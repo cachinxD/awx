@@ -1,6 +1,6 @@
 ---
 - name: Ejecutar script SQL en Windows
-  hosts: windows  # El grupo de inventario que contiene el servidor Windows
+  hosts: all  # El grupo de inventario que contiene el servidor Windows
   tasks:
     - name: Ejecutar script SQL
       win_shell: |
