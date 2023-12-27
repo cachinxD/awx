@@ -3,9 +3,6 @@
   hosts: all
   become: true
   gather_facts: true
-  vars:
-    ansible_user: root
-    ansible_ssh_pass: 123456
   tasks:
     - name: pingtest
       ping:
