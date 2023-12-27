@@ -1,0 +1,11 @@
+---
+- name: ping test
+  hosts: all  # El grupo de inventario que contiene el servidor Windows
+  become: false
+  gather_facts: false
+  vars:
+    ansible_user: platafirmati  # Reemplaza con el nombre de usuario de Windows
+    ansible_password: Acity2023
+  tasks:
+    - name: pingtest
+      win_ping:
