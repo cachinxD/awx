@@ -3,7 +3,7 @@
   hosts: all
   vars:
     nombre_del_servidor: "10.0.10.51"
-    usuario: "pe280\jegoavil"
+    usuario: "jegoavil@pe280.bally.local"
     contraseña: "Acity2023"
     nombre_de_la_base_de_datos: "AWX"
   tasks:
