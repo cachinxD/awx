@@ -1,0 +1,18 @@
+---
+- name: Ejecutar archivo SQL remoto
+  hosts: all
+  vars:
+    remote_path: "\\10.0.10.51\C$\Users\jegoavil\DesktopScript2.sql"
+    name_server: "10.0.10.51"
+    user: "sqlawx"
+    password: "C0rtvs@c"
+    name_db: "AWX"
+  tasks:
+    - name: Ejecutar archivo SQL
+      win_command: "Invoke-Sqlcmd -ServerInstance {{ name_server }} -Username {{ user }} -Password {{ password }} -Database {{ name_db }} -InputFile {{ remote_path }}"
+   
+      register: sql_result
+
+    - name: Mostrar resultado SQL
+      debug:
+        var: sql_result.stdout_lines
