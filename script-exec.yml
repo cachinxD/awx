@@ -2,7 +2,7 @@
 - name: Ejecutar archivo SQL remoto
   hosts: all
   vars:
-    remote_path: "\\10.0.10.51\C$\Users\jegoavil\Desktop\Script2.sql"
+    remote_path: '\\10.0.10.51\C$\Users\jegoavil\Desktop\Script2.sql'
     name_server: "10.0.10.51"
     user: "sqlawx"
     password: "C0rtvs@c"
