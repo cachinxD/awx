@@ -9,4 +9,9 @@
   tasks:
     - name: Ejecutar script SQL
       win_shell: |
-        Invoke-Sqlcmd -ServerInstance {{ name_server }} -Username {{ user }} -Password {{ password }} -Database {{ name_db }} -Query "SELECT * FROM Heroes WHERE tipo_heroe = 'fuerza'"
+        $result = Invoke-Sqlcmd -ServerInstance {{ name_server }} -Username {{ user }} -Password {{ password }} -Database {{ name_db }} -Query "SELECT * FROM Heroes WHERE tipo_heroe = 'fuerza'"
+        $result
+      register: sql_result
+    - name: Mostrar resultado SQL
+      debug:
+        var: sql_result.stdout_lines
