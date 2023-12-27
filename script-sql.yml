@@ -4,9 +4,9 @@
   vars:
     name_server: "10.0.10.51"
     user: "jegoavil@pe280.bally.local"
-    pass: "Acity2023"
+    password: "Acity2023"
     name_db: "AWX"
   tasks:
     - name: Ejecutar script SQL
       win_shell: |
-        Invoke-Sqlcmd -ServerInstance {{ name_server }} -Username {{ user }} -Password {{ pass }} -Database {{ name_db }} -Query "SELECT * FROM Heroes WHERE tipo_heroe = 'fuerza'"
+        Invoke-Sqlcmd -ServerInstance {{ name_server }} -Username {{ user }} -Password {{ password }} -Database {{ name_db }} -Query "SELECT * FROM Heroes WHERE tipo_heroe = 'fuerza'"
