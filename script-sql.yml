@@ -2,11 +2,11 @@
 - name: Ejecutar script SQL en Windows
   hosts: all
   vars:
-    nombre_del_servidor: "10.0.10.51"
-    usuario: "jegoavil@pe280.bally.local"
-    contraseña: "Acity2023"
-    nombre_de_la_base_de_datos: "AWX"
+    name_server: "10.0.10.51"
+    user: "jegoavil@pe280.bally.local"
+    pass: "Acity2023"
+    name_db: "AWX"
   tasks:
     - name: Ejecutar script SQL
       win_shell: |
-        Invoke-Sqlcmd -ServerInstance {{ nombre_del_servidor }} -Username {{ usuario }} -Password {{ contraseña }} -Database {{ nombre_de_la_base_de_datos }} -Query "SELECT * FROM Heroes WHERE tipo_heroe = 'fuerza'"
+        Invoke-Sqlcmd -ServerInstance {{ name_server }} -Username {{ user }} -Password {{ pass }} -Database {{ name_db }} -Query "SELECT * FROM Heroes WHERE tipo_heroe = 'fuerza'"
